@@ -1,5 +1,5 @@
-# (Titlu)
-(Scurtă descriere)
+# Let your music paint the picture
+Aplicatia are ca scop crearea unor vizualuri bazate pe proprietati ale fisierului muzical introdus. 
 
 ## (Instalare)
 ...
