@@ -2,23 +2,49 @@
 Aplicatia are ca scop crearea unor vizualuri bazate pe proprietati ale fisierului muzical introdus. 
 
 ## (Instalare)
-...
+Pentru a putea rula atat aplicatia cat si interfata grafica este necesara instalarea aplicatiei TouchDesigner. 
+! Pentru a putea fi utilizata la capacitate maxima este nevoie de un procesor destul de puternic. In caz contrar se vor intampina probleme la redarea sunetului/ crearea vizualurilor/ utilizarea butoanelor. 
 
 ## (Utilizare)
-...
+Aplicatia contine o interfata grafica ce permite utilizatorului sa:
+        - aleaga un fisier audio de pe disc
+        - sa vizualizeze unul din cele trei posibile vizualuri
+        - sa porneasca/opreasca fisierul audio si implicit vizualurile
+Obs: se poate vizualiza doar cate un outpu (in codul python care controleaza afisarea pentru fiecare Window, initial se inchid toate celalalte ferestre de redare).
 
 ## (Istoric)
 
-(13.05) ...
+1. Prima etapa reprezinta procesarea fisierului audio. Pentru acest lucru am folosit componenta builtin audioAnalysis care permite extragerea parametrilor: low, mid, high, spectral centroid, slow moving partials density, fast moving partials density, kick, snare, rythm. Toti acesti parametrii sunt extrasi individual in blocuri de tip Select si apoi scosi cu ajutorul componentelor Out pentru a putea fi procesati in exteriorul blocului de analiza al fisierului audio. 
+2. A doua etapa o reprezinta crearea partii vizuale. Pentru acest lucru am utilizat ca baza componenta Noise. Pentru a da senzatia de miscare, parametrii de intrare pentru Noise variaza in functie de parametrii extrasi din fisierul audio. Din blocul Noise se despart trei ramuri, fiecare continand diferite efecte pentru imagini ale caror parametrii de intrare sunt modificati de parametrii de iesire ai fisierului sonor. 
+3. Ultima etapa o reprezinta crearea interfetei grafice pentru utilizator. Desi TouchDesigner nu ofera posibilitatea crearii unui UI complex, ofera insa o multitudine de butoane care pot fi legate la diferitele componente ale fluxului. Interfata in sine este tinuta intr-o componenta de tip Container. Acesteia i-am asociat diferite butoane : buttonRocker(play/stop), fieldFileBrowser(alegerea fisierului de pe disc), toggleButton(pentru a selectia unul dintre cele trei posibile outputuri). Legatura dintre butoanele interfetei si actiunile celorlalte componente se face prin utilizrea unor componente de tip Constant. Acestea pot avea un numar dat de canale ce contin informatii legate de starea butoanelor. Cu ajutorul acestor canale am realizat trei scripturi scurte in Python pentru a putea controla parametrii de afisare/inchidere ale ferestrelor pentru vizualuri. Scripturile sunt create cu ajutorul componentei CHOP Execute.
 
-(3.06) ...
-
-(X.06) ...
+       
 
 ## (Link-uri)
-...
+Proiectul este 100% creatie proprie insa m-am folosit de diferite tutoriale Youtube/documentatii de pe site-ul oficial/forumuri pentru a intelege ce se poate crea in aplicatie si cum. 
+https://matthewragan.com/2013/10/10/sending-and-receiving-osc-values-with-touchdesigner/
+https://docs.derivative.ca/Panel_Execute_DAT
+https://docs.derivative.ca/OP_Execute_DAT
+https://www.youtube.com/watch?v=4-oPy4RFZK0
+https://www.youtube.com/watch?v=fgs6DVdUkM0
+https://vimeo.com/376574533
+https://www.youtube.com/watch?v=oviwpILXo5A&list=PLiLQehonm_r89FxLfu2dbxqeas5irwwZa&index=1
+https://www.youtube.com/watch?v=gUELH_B2wsE&list=PLiLQehonm_r89FxLfu2dbxqeas5irwwZa&index=2
+https://www.youtube.com/c/TheInteractiveImmersiveHQ
+https://www.youtube.com/watch?v=Jh18yHfYT0I
+https://www.youtube.com/watch?v=MZs7co3udO0&t=606s
+https://www.youtube.com/watch?v=gUELH_B2wsE&t=65s
+https://www.youtube.com/watch?v=oviwpILXo5A&t=5shttps://www.youtube.com/c/MatthewRaganMFA
+https://www.youtube.com/watch?v=eozyY_lO9vM&t=323s
+https://www.youtube.com/watch?v=B0lEnVglMkk
+https://matthewragan.com/2016/07/06/python-in-touchdesigner-executes-touchdesigner/
+https://matthewragan.com/2020/11/04/touchdesigner-the-big-bad-ass-lister-part-2-3/
+https://matthewragan.com/2014/06/01/understanding-referencing-touchdesigner/
+https://derivative.ca/community-post/tutorial/kinetic-typography-touchdesigner-part-2-ui-build
+https://alltd.org/python-scripting-beginners-touchdesigner/
 
 # Dezvoltarea proiectului
+
 
 Pentru început:
 
