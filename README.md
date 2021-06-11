@@ -4,6 +4,8 @@ Aplicatia are ca scop crearea unor vizualuri bazate pe proprietati ale fisierulu
 ## (Instalare)
 Pentru a putea rula atat aplicatia cat si interfata grafica este necesara instalarea aplicatiei TouchDesigner. 
 ! Pentru a putea fi utilizata la capacitate maxima este nevoie de un procesor destul de puternic. In caz contrar se vor intampina probleme la redarea sunetului/ crearea vizualurilor/ utilizarea butoanelor. 
+Se intra pana in componenta container1 si se deschide cu Open Viewer.
+
 
 ## (Utilizare)
 Aplicatia contine o interfata grafica ce permite utilizatorului sa:
